@@ -1,11 +1,11 @@
 # Resource: UserMgmt WebApp Kubernetes Deployment
 resource "kubernetes_deployment_v1" "myapp1" {
-  depends_on = [ aws_efs_mount_target.efs_mount_target]  
+  depends_on = [aws_efs_mount_target.efs_mount_target]
   metadata {
-    name = "myapp1"
-    namespace = "fp-ns-app1"    
+    name      = "myapp1"
+    namespace = "fp-ns-app1"
   }
-   spec {
+  spec {
     replicas = 2
     selector {
       match_labels = {
@@ -27,17 +27,17 @@ resource "kubernetes_deployment_v1" "myapp1" {
             container_port = 80
           }
           volume_mount {
-            name = "persistent-storage"
+            name       = "persistent-storage"
             mount_path = "/usr/share/nginx/html/efs"
           }
         }
-        volume {          
+        volume {
           name = "persistent-storage"
           persistent_volume_claim {
-          claim_name = kubernetes_persistent_volume_claim_v1.efs_pvc.metadata[0].name 
+            claim_name = kubernetes_persistent_volume_claim_v1.efs_pvc.metadata[0].name
+          }
         }
       }
     }
   }
-}
 }

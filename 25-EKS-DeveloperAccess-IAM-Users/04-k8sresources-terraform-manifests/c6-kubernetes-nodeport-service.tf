@@ -1,7 +1,7 @@
 # Kubernetes Service Manifest (Type: Node Port Service)
 resource "kubernetes_service_v1" "np_service" {
   metadata {
-    name = "myapp1-nodeport-service"
+    name      = "myapp1-nodeport-service"
     namespace = "dev"
   }
   spec {

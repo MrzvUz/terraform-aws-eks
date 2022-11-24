@@ -10,7 +10,7 @@ resource "kubernetes_service_v1" "nodeport_service" {
     port {
       port        = 80
       target_port = 8080
-      node_port = 31280
+      node_port   = 31280
     }
 
     type = "NodePort"

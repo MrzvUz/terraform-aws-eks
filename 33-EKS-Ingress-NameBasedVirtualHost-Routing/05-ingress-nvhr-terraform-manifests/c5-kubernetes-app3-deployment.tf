@@ -5,8 +5,8 @@ resource "kubernetes_deployment_v1" "myapp3" {
     labels = {
       app = "app3-nginx"
     }
-  } 
- 
+  }
+
   spec {
     replicas = 1
 
@@ -30,9 +30,9 @@ resource "kubernetes_deployment_v1" "myapp3" {
           port {
             container_port = 80
           }
-          }
         }
       }
     }
+  }
 }
 

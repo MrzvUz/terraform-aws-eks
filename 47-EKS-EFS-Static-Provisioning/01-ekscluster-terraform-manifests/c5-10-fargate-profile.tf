@@ -28,10 +28,10 @@ resource "aws_eks_fargate_profile" "fargate_profile" {
   cluster_name           = aws_eks_cluster.eks_cluster.id
   fargate_profile_name   = "${local.name}-fp-app1"
   pod_execution_role_arn = aws_iam_role.fargate_profile_role.arn
-  subnet_ids = module.vpc.private_subnets
+  subnet_ids             = module.vpc.private_subnets
   selector {
     namespace = "fp-ns-app1"
   }
   # Ensure that aws-auth Config Map Roles are updated with Fargate Role in it before creating the Fargate Profile
-  depends_on = [kubernetes_config_map_v1.aws_auth ] 
+  depends_on = [kubernetes_config_map_v1.aws_auth]
 }

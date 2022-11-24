@@ -1,7 +1,7 @@
 # Fargate Profile Role ARN Output
 output "fargate_profile_iam_role_arn" {
   description = "Fargate Profile IAM Role ARN"
-  value = aws_iam_role.fargate_profile_role.arn 
+  value       = aws_iam_role.fargate_profile_role.arn
 }
 
 # Fargate Profile Outputs - kube-system Namespace

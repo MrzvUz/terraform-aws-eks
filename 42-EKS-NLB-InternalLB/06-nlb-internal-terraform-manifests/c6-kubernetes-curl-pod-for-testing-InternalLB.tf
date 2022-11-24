@@ -6,9 +6,9 @@ resource "kubernetes_pod_v1" "curl_pod" {
 
   spec {
     container {
-      image = "curlimages/curl"
-      name  = "curl"
-      command = [ "sleep", "600" ]
+      image   = "curlimages/curl"
+      name    = "curl"
+      command = ["sleep", "600"]
     }
   }
 }

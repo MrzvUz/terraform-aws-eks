@@ -12,12 +12,12 @@ data "http" "get_cwagent_serviceaccount" {
 # Datasource: kubectl_file_documents 
 # This provider provides a data resource kubectl_file_documents to enable ease of splitting multi-document yaml content.
 data "kubectl_file_documents" "cwagent_docs" {
-    content = data.http.get_cwagent_serviceaccount.body
+  content = data.http.get_cwagent_serviceaccount.body
 }
 
 # Resource: kubectl_manifest which will create k8s Resources from the URL specified in above datasource
 resource "kubectl_manifest" "cwagent_serviceaccount" {
-    depends_on = [kubernetes_namespace_v1.amazon_cloudwatch]
-    for_each = data.kubectl_file_documents.cwagent_docs.manifests
-    yaml_body = each.value
+  depends_on = [kubernetes_namespace_v1.amazon_cloudwatch]
+  for_each   = data.kubectl_file_documents.cwagent_docs.manifests
+  yaml_body  = each.value
 }

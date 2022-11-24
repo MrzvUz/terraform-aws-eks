@@ -3,7 +3,7 @@ resource "kubernetes_service_v1" "network_lb_service" {
   metadata {
     name = "usermgmt-webapp-network-lb-service"
     annotations = {
-      "service.beta.kubernetes.io/aws-load-balancer-type" = "nlb"    # To create Network Load Balancer
+      "service.beta.kubernetes.io/aws-load-balancer-type" = "nlb" # To create Network Load Balancer
     }
   }
   spec {

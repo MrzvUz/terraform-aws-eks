@@ -3,9 +3,9 @@ resource "kubernetes_service_v1" "lb_service_nlb" {
   metadata {
     name = "myapp1-lb-service-nlb"
     annotations = {
-      "service.beta.kubernetes.io/aws-load-balancer-type" = "nlb"    # To create Network Load Balancer  
+      "service.beta.kubernetes.io/aws-load-balancer-type" = "nlb" # To create Network Load Balancer  
     }
-    namespace = "dev"   
+    namespace = "dev"
   }
   spec {
     selector = {

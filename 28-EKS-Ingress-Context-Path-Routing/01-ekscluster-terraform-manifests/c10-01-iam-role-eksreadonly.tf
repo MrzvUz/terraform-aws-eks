@@ -24,7 +24,7 @@ resource "aws_iam_role" "eks_readonly_role" {
       Version = "2012-10-17"
       Statement = [
         {
-          Action   = [
+          Action = [
             "iam:ListRoles",
             "ssm:GetParameter",
             "eks:DescribeNodegroup",
@@ -43,7 +43,7 @@ resource "aws_iam_role" "eks_readonly_role" {
         },
       ]
     })
-  }    
+  }
 
   tags = {
     tag-key = "${local.name}-eks-readonly-role"

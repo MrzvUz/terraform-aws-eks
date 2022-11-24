@@ -1,12 +1,12 @@
 # Kubernetes Deployment Manifest
 resource "kubernetes_deployment_v1" "vpa_demo_app" {
   metadata {
-    name = "vpa-demo-deployment" 
+    name = "vpa-demo-deployment"
     labels = {
       app = "vpa-nginx"
     }
-  } 
- 
+  }
+
   spec {
     replicas = 4
 
@@ -32,13 +32,13 @@ resource "kubernetes_deployment_v1" "vpa_demo_app" {
           }
           resources {
             requests = {
-              cpu = "5m"
+              cpu    = "5m"
               memory = "5Mi"
             }
-          }
           }
         }
       }
     }
+  }
 }
 

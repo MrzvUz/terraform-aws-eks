@@ -5,7 +5,7 @@ resource "kubernetes_service_v1" "myapp3_np_service" {
     annotations = {
       #Important Note:  Need to add health check path annotations in service level if we are planning to use multiple targets in a load balancer    
       #"alb.ingress.kubernetes.io/healthcheck-path" = "/index.html"
-    }    
+    }
   }
   spec {
     selector = {

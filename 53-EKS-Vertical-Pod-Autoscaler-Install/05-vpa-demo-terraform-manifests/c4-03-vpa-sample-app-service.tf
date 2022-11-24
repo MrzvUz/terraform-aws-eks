@@ -1,7 +1,7 @@
 # Kubernetes Service Manifest (Type: Cluster IP Service)
 resource "kubernetes_service_v1" "myapp3_cip_service" {
   metadata {
-    name = "vpa-demo-service-nginx" 
+    name = "vpa-demo-service-nginx"
   }
   spec {
     selector = {

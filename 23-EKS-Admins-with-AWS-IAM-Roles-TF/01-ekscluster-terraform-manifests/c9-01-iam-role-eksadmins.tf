@@ -25,7 +25,7 @@ resource "aws_iam_role" "eks_admin_role" {
       Version = "2012-10-17"
       Statement = [
         {
-          Action   = [
+          Action = [
             "iam:ListRoles",
             "eks:*",
             "ssm:GetParameter"
@@ -35,7 +35,7 @@ resource "aws_iam_role" "eks_admin_role" {
         },
       ]
     })
-  }    
+  }
 
   tags = {
     tag-key = "${local.name}-eks-admin-role"

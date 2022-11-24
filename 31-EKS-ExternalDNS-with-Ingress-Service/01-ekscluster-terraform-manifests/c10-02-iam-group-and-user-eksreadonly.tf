@@ -19,7 +19,7 @@ resource "aws_iam_group_policy" "eksreadonly_iam_group_assumerole_policy" {
           "sts:AssumeRole",
         ]
         Effect   = "Allow"
-        Sid    = "AllowAssumeOrganizationAccountRole"
+        Sid      = "AllowAssumeOrganizationAccountRole"
         Resource = "${aws_iam_role.eks_readonly_role.arn}"
       },
     ]
@@ -29,10 +29,10 @@ resource "aws_iam_group_policy" "eksreadonly_iam_group_assumerole_policy" {
 
 # Resource: AWS IAM User 
 resource "aws_iam_user" "eksreadonly_user" {
-  name = "${local.name}-eksreadonly1"
-  path = "/"
+  name          = "${local.name}-eksreadonly1"
+  path          = "/"
   force_destroy = true
-  tags = local.common_tags
+  tags          = local.common_tags
 }
 
 # Resource: AWS IAM Group Membership

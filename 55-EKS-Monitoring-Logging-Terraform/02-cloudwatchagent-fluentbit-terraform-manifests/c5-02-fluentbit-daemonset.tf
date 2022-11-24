@@ -17,7 +17,7 @@ data "http" "get_fluentbit_resources" {
 # Datasource: kubectl_file_documents 
 # This provider provides a data resource kubectl_file_documents to enable ease of splitting multi-document yaml content.
 data "kubectl_file_documents" "fluentbit_docs" {
-    content = data.http.get_fluentbit_resources.body
+  content = data.http.get_fluentbit_resources.body
 }
 
 # Resource: kubectl_manifest which will create k8s Resources from the URL specified in above datasource
@@ -26,7 +26,7 @@ resource "kubectl_manifest" "fluentbit_resources" {
     kubernetes_namespace_v1.amazon_cloudwatch,
     kubernetes_config_map_v1.fluentbit_configmap,
     kubectl_manifest.cwagent_daemonset
-    ]
-  for_each = data.kubectl_file_documents.fluentbit_docs.manifests    
+  ]
+  for_each  = data.kubectl_file_documents.fluentbit_docs.manifests
   yaml_body = each.value
 }

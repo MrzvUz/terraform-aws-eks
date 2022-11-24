@@ -1,8 +1,8 @@
 # Resource: Kubernetes Service Manifest (Type: Load Balancer - Classic)
 resource "kubernetes_service_v1" "lb_service" {
   metadata {
-    name = "myapp1-clb-service"
-    namespace = "fp-ns-app1"    
+    name      = "myapp1-clb-service"
+    namespace = "fp-ns-app1"
   }
   spec {
     selector = {

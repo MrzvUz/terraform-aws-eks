@@ -26,7 +26,7 @@ output "cluster_version" {
 
 output "cluster_iam_role_name" {
   description = "IAM role name of the EKS cluster."
-  value       = aws_iam_role.eks_master_role.name 
+  value       = aws_iam_role.eks_master_role.name
 }
 
 output "cluster_iam_role_arn" {

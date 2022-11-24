@@ -1,5 +1,5 @@
 resource "kubectl_manifest" "vpa_resource" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: autoscaling.k8s.io/v1
 kind: VerticalPodAutoscaler
 metadata:

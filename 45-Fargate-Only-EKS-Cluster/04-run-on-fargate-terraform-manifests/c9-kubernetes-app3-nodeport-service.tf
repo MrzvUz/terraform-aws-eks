@@ -1,11 +1,11 @@
 # Kubernetes Service Manifest (Type: Node Port Service)
 resource "kubernetes_service_v1" "myapp3_np_service" {
   metadata {
-    name = "app3-nginx-nodeport-service"
-    namespace = "fp-ns-app1"        
+    name      = "app3-nginx-nodeport-service"
+    namespace = "fp-ns-app1"
     annotations = {
       "alb.ingress.kubernetes.io/healthcheck-path" = "/index.html"
-    }    
+    }
   }
   spec {
     selector = {

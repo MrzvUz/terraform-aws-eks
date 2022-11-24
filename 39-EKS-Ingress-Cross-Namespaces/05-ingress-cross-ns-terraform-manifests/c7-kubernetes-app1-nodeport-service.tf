@@ -5,7 +5,7 @@ resource "kubernetes_service_v1" "myapp1_np_service" {
     annotations = {
       "alb.ingress.kubernetes.io/healthcheck-path" = "/app1/index.html"
     }
-    namespace = kubernetes_namespace_v1.ns_app1.metadata[0].name    
+    namespace = kubernetes_namespace_v1.ns_app1.metadata[0].name
   }
   spec {
     selector = {

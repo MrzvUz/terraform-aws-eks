@@ -6,8 +6,8 @@ resource "kubernetes_deployment_v1" "myapp1" {
       app = "myapp1"
     }
     namespace = "dev"
-  } 
- 
+  }
+
   spec {
     replicas = 2
 
@@ -31,9 +31,9 @@ resource "kubernetes_deployment_v1" "myapp1" {
           port {
             container_port = 80
           }
-          }
         }
       }
     }
+  }
 }
 

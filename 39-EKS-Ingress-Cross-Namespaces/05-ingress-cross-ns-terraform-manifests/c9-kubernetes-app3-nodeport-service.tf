@@ -4,8 +4,8 @@ resource "kubernetes_service_v1" "myapp3_np_service" {
     name = "app3-nginx-nodeport-service"
     annotations = {
       "alb.ingress.kubernetes.io/healthcheck-path" = "/index.html"
-    }    
-    namespace = kubernetes_namespace_v1.ns_app3.metadata[0].name    
+    }
+    namespace = kubernetes_namespace_v1.ns_app3.metadata[0].name
   }
   spec {
     selector = {

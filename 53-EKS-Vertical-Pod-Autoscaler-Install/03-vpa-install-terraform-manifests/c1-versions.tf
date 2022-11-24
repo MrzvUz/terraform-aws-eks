@@ -3,7 +3,7 @@ terraform {
   required_version = ">= 1.0.0"
   required_providers {
     null = {
-      source = "hashicorp/null"
+      source  = "hashicorp/null"
       version = "~> 3.1"
     }
   }
@@ -11,11 +11,11 @@ terraform {
   backend "s3" {
     bucket = "terraform-on-aws-eks"
     key    = "dev/eks-vpa-install/terraform.tfstate"
-    region = "us-east-1" 
+    region = "us-east-1"
 
     # For State Locking
-    dynamodb_table = "dev-eks-vpa-install"    
-  }     
+    dynamodb_table = "dev-eks-vpa-install"
+  }
 }
 
 provider "null" {

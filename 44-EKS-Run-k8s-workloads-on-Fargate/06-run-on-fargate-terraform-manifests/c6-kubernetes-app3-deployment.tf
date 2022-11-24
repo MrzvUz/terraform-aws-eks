@@ -1,13 +1,13 @@
 # Kubernetes Deployment Manifest
 resource "kubernetes_deployment_v1" "myapp3" {
   metadata {
-    name = "app3-nginx-deployment"
-    namespace = "fp-ns-app1"        
+    name      = "app3-nginx-deployment"
+    namespace = "fp-ns-app1"
     labels = {
       app = "app3-nginx"
     }
-  } 
- 
+  }
+
   spec {
     replicas = 1
 
@@ -33,18 +33,18 @@ resource "kubernetes_deployment_v1" "myapp3" {
           }
           resources {
             requests = {
-              "cpu" = "1000m"
-              "memory" = "2048Mi" 
+              "cpu"    = "1000m"
+              "memory" = "2048Mi"
             }
             limits = {
-              "cpu" = "2000m"
+              "cpu"    = "2000m"
               "memory" = "4096Mi"
             }
-          }
           }
         }
       }
     }
+  }
 }
 
 ## Reference about Capacity (https://docs.aws.amazon.com/eks/latest/userguide/fargate-pod-configuration.html)
